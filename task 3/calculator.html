@@ -1,0 +1,55 @@
+
+<html>
+    <head>
+        <title>Simple Calculator</title>
+        <script>
+            function set(operatiom){
+                document.getElementById('myform').action = "http://localhost:9000/"+operatiom;
+            }
+            let activeDisplayId = 'display1';
+
+        function setActiveDisplay(displayId) {
+            activeDisplayId = displayId;
+        }
+
+        function appendToDisplay(value) {
+            document.getElementById(activeDisplayId).value += value;
+        }
+        </script>
+        <link rel = "stylesheet" href="style.css">
+    </head>
+    <body>
+        <h2>CALCULATOR</h2>
+        
+            <div class="home">
+                <form action="http://localhost:9000" method="get" id="myform">
+                <div class="input-field">
+                    <input type="any" id="display1" name="num1" onfocus="setActiveDisplay('display1')" autocomplete="off">
+                    <input type="any" id="display2" name="num2" onfocus="setActiveDisplay('display2')" autocomplete="off">
+                </div>
+                
+                <div class="operators">
+                    <button type="submit" onclick="set('add')">+</button>
+                    <button type="submit" onclick="set('sub')">-</button>
+                    <button type="submit" onclick="set('mul')">*</button>
+                    <button type="submit" onclick="set('div')">/</button>
+                    <button type="submit" onclick="set('power')">^</button>
+                    <button type="submit" onclick="set('modulo')">%</button>
+
+                </div>
+                </form>
+                <div class="button">
+                    <button onclick="appendToDisplay('7')">7</button>
+                    <button onclick="appendToDisplay('8')">8</button>
+                    <button onclick="appendToDisplay('9')">9</button>
+                    <button onclick="appendToDisplay('4')">4</button>
+                    <button onclick="appendToDisplay('5')">5</button>
+                    <button onclick="appendToDisplay('6')">6</button>
+                    <button onclick="appendToDisplay('1')">1</button>
+                    <button onclick="appendToDisplay('2')">2</button>
+                    <button onclick="appendToDisplay('3')">3</button>
+                </div>
+            
+    </div>
+    </body>
+</html>
